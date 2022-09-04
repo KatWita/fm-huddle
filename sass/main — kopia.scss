@@ -1,0 +1,175 @@
+@use './colors' as *;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.6rem;
+}
+
+/* --------------------------- */
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	color: $white;
+}
+.attribution a {
+	color: $soft-magenta;
+}
+/* --------------------------- */
+
+.container,
+footer {
+	background-color: #674baf;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	color: $white;
+	min-height: 100vh;
+}
+
+.content {
+	padding: 2em 2.4em;
+	background-image: url(../images/bg-mobile.svg);
+	background-color: $violet;
+	background-repeat: no-repeat;
+	text-align: center;
+	width: 100%;
+	max-width: 375px;
+	box-shadow: 0px 0px 24px -5px rgba(61, 45, 99, 1);
+}
+
+.logo,
+.mockup-img {
+	display: block;
+}
+
+.logo {
+	width: 125px;
+}
+
+.mockup-img {
+	margin-top: 3.8em;
+	width: 100%;
+}
+
+.heading {
+	margin-top: 2.5em;
+	font-family: 'Poppins', sans-serif;
+	font-size: 2.5rem;
+}
+
+.text {
+	margin-top: 1em;
+	font-size: 1.56rem;
+	line-height: 26px;
+}
+
+.btn-register {
+	margin-top: 2em;
+	padding: 1em 5.7em;
+	border: none;
+	border-radius: 20px;
+	background-color: $white;
+	color: $violet;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	box-shadow: 0px 3px 7px -1px rgba(54, 40, 92, 1);
+
+	&:hover {
+		background-color: $soft-magenta;
+		color: $white;
+	}
+}
+
+.icons {
+	display: flex;
+	justify-content: center;
+	gap: 0.5em;
+	margin-top: 4.4em;
+
+	&__circle {
+		position: relative;
+		padding: 1em;
+		border: 1px solid $white;
+		border-radius: 50%;
+		cursor: pointer;
+		transition: color 0.3s, border 0.3s;
+
+		&:hover {
+			color: $soft-magenta;
+			border: 1px solid $soft-magenta;
+		}
+	}
+}
+
+.fa-facebook-f,
+.fa-twitter,
+.fa-instagram {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.fa-twitter {
+	font-size: 1.5rem;
+}
+
+.fa-instagram {
+	font-size: 1.8rem;
+}
+
+@media (min-width: 1440px) {
+	.content {
+		padding: 2.5em;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		max-width: 100%;
+		background-image: url(../images/bg-desktop.svg);
+		background-size: cover;
+	}
+
+	.logo {
+		width: 200px;
+	}
+
+	.columns {
+		display: flex;
+
+		&__left {
+			margin-top: 5em;
+			width: 50%;
+		}
+
+		&__right {
+			width: 50%;
+		}
+
+		&__right {
+			text-align: left;
+		}
+	}
+	.icons {
+		margin: 0;
+		justify-content: flex-end;
+	}
+
+	.heading,
+	.mockup-img {
+		margin: 0;
+	}
+}
